@@ -1,8 +1,8 @@
 //
 //  MyViewController.h
-//  MyPhotoBrowse
+//  MyLibrary
 //
-//  Created by Petey on 5/23/14.
+//  Created by Petey on 5/16/14.
 //  Copyright (c) 2014 Petey. All rights reserved.
 //
 

@@ -21,6 +21,16 @@
 		40E9BA57192F9A6B00DDF1DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E9BA39192F9A6B00DDF1DD /* UIKit.framework */; };
 		40E9BA5F192F9A6B00DDF1DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA5D192F9A6B00DDF1DD /* InfoPlist.strings */; };
 		40E9BA61192F9A6B00DDF1DD /* MyPhotoBrowseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9BA60192F9A6B00DDF1DD /* MyPhotoBrowseTests.m */; };
+		40E9BA6E192F9B4900DDF1DD /* MyPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9BA6B192F9B4900DDF1DD /* MyPhotoBrowser.m */; };
+		40E9BA6F192F9B4900DDF1DD /* MyPhotoPageVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9BA6D192F9B4900DDF1DD /* MyPhotoPageVIew.m */; };
+		40E9BA78192F9B7A00DDF1DD /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA70192F9B7A00DDF1DD /* photo1.jpg */; };
+		40E9BA79192F9B7A00DDF1DD /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA71192F9B7A00DDF1DD /* photo2.jpg */; };
+		40E9BA7A192F9B7A00DDF1DD /* photo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA72192F9B7A00DDF1DD /* photo3.jpg */; };
+		40E9BA7B192F9B7A00DDF1DD /* photo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA73192F9B7A00DDF1DD /* photo4.jpg */; };
+		40E9BA7C192F9B7A00DDF1DD /* photo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA74192F9B7A00DDF1DD /* photo5.jpg */; };
+		40E9BA7D192F9B7A00DDF1DD /* photo6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA75192F9B7A00DDF1DD /* photo6.jpg */; };
+		40E9BA7E192F9B7A00DDF1DD /* photo7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA76192F9B7A00DDF1DD /* photo7.jpg */; };
+		40E9BA7F192F9B7A00DDF1DD /* photo8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA77192F9B7A00DDF1DD /* photo8.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,18 @@
 		40E9BA5C192F9A6B00DDF1DD /* MyPhotoBrowseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyPhotoBrowseTests-Info.plist"; sourceTree = "<group>"; };
 		40E9BA5E192F9A6B00DDF1DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40E9BA60192F9A6B00DDF1DD /* MyPhotoBrowseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPhotoBrowseTests.m; sourceTree = "<group>"; };
+		40E9BA6A192F9B4900DDF1DD /* MyPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoBrowser.h; sourceTree = "<group>"; };
+		40E9BA6B192F9B4900DDF1DD /* MyPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoBrowser.m; sourceTree = "<group>"; };
+		40E9BA6C192F9B4900DDF1DD /* MyPhotoPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoPageView.h; sourceTree = "<group>"; };
+		40E9BA6D192F9B4900DDF1DD /* MyPhotoPageVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoPageVIew.m; sourceTree = "<group>"; };
+		40E9BA70192F9B7A00DDF1DD /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
+		40E9BA71192F9B7A00DDF1DD /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.jpg; sourceTree = "<group>"; };
+		40E9BA72192F9B7A00DDF1DD /* photo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo3.jpg; sourceTree = "<group>"; };
+		40E9BA73192F9B7A00DDF1DD /* photo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo4.jpg; sourceTree = "<group>"; };
+		40E9BA74192F9B7A00DDF1DD /* photo5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo5.jpg; sourceTree = "<group>"; };
+		40E9BA75192F9B7A00DDF1DD /* photo6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo6.jpg; sourceTree = "<group>"; };
+		40E9BA76192F9B7A00DDF1DD /* photo7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo7.jpg; sourceTree = "<group>"; };
+		40E9BA77192F9B7A00DDF1DD /* photo8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo8.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +134,18 @@
 		40E9BA3B192F9A6B00DDF1DD /* MyPhotoBrowse */ = {
 			isa = PBXGroup;
 			children = (
+				40E9BA70192F9B7A00DDF1DD /* photo1.jpg */,
+				40E9BA71192F9B7A00DDF1DD /* photo2.jpg */,
+				40E9BA72192F9B7A00DDF1DD /* photo3.jpg */,
+				40E9BA73192F9B7A00DDF1DD /* photo4.jpg */,
+				40E9BA74192F9B7A00DDF1DD /* photo5.jpg */,
+				40E9BA75192F9B7A00DDF1DD /* photo6.jpg */,
+				40E9BA76192F9B7A00DDF1DD /* photo7.jpg */,
+				40E9BA77192F9B7A00DDF1DD /* photo8.jpg */,
+				40E9BA6A192F9B4900DDF1DD /* MyPhotoBrowser.h */,
+				40E9BA6B192F9B4900DDF1DD /* MyPhotoBrowser.m */,
+				40E9BA6C192F9B4900DDF1DD /* MyPhotoPageView.h */,
+				40E9BA6D192F9B4900DDF1DD /* MyPhotoPageVIew.m */,
 				40E9BA44192F9A6B00DDF1DD /* MyAppDelegate.h */,
 				40E9BA45192F9A6B00DDF1DD /* MyAppDelegate.m */,
 				40E9BA47192F9A6B00DDF1DD /* Main.storyboard */,
@@ -229,6 +263,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E9BA7E192F9B7A00DDF1DD /* photo7.jpg in Resources */,
+				40E9BA7D192F9B7A00DDF1DD /* photo6.jpg in Resources */,
+				40E9BA7F192F9B7A00DDF1DD /* photo8.jpg in Resources */,
+				40E9BA7C192F9B7A00DDF1DD /* photo5.jpg in Resources */,
+				40E9BA7B192F9B7A00DDF1DD /* photo4.jpg in Resources */,
+				40E9BA7A192F9B7A00DDF1DD /* photo3.jpg in Resources */,
+				40E9BA79192F9B7A00DDF1DD /* photo2.jpg in Resources */,
+				40E9BA78192F9B7A00DDF1DD /* photo1.jpg in Resources */,
 				40E9BA4E192F9A6B00DDF1DD /* Images.xcassets in Resources */,
 				40E9BA40192F9A6B00DDF1DD /* InfoPlist.strings in Resources */,
 				40E9BA49192F9A6B00DDF1DD /* Main.storyboard in Resources */,
@@ -250,9 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E9BA6F192F9B4900DDF1DD /* MyPhotoPageVIew.m in Sources */,
 				40E9BA4C192F9A6B00DDF1DD /* MyViewController.m in Sources */,
 				40E9BA46192F9A6B00DDF1DD /* MyAppDelegate.m in Sources */,
 				40E9BA42192F9A6B00DDF1DD /* main.m in Sources */,
+				40E9BA6E192F9B4900DDF1DD /* MyPhotoBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +501,7 @@
 				40E9BA66192F9A6B00DDF1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40E9BA67192F9A6B00DDF1DD /* Build configuration list for PBXNativeTarget "MyPhotoBrowseTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +510,7 @@
 				40E9BA69192F9A6B00DDF1DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
