@@ -14,7 +14,8 @@
 
 @protocol MyPhotoBrowserDelegate<NSObject, UIScrollViewDelegate>
 
--(void)photoBrowser:(MyPhotoBrowser*)photoBrowser didDisplayPhotoAtIndex:(NSUInteger)index;
+-(void)photoBrowser:(MyPhotoBrowser*)photoBrowser didDisplayPhotoAtIndexPath:(NSIndexPath*)indexPath;
+-(void)photoBrowser:(MyPhotoBrowser *)photoBrowser singleTapAtIndexpath:(NSIndexPath*)indexPath;
 
 @end
 

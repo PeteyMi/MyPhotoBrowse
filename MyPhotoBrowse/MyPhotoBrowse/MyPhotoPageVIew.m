@@ -11,6 +11,7 @@
 #define MYPHOTO_ZOOM_SCALE 2.5
 
 
+NSString* const notficationPhotoPageViewSingleTap = @"notficationPhotoPageViewSingleTap";
 
 @interface MyPhotoPageView ()<UIScrollViewDelegate>
 
@@ -207,8 +208,7 @@
         
     }
 }
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch* touch = [touches anyObject];
     NSUInteger tapCount = touch.tapCount;
@@ -217,15 +217,27 @@
             [self handleSingleTap:[touch locationInView:_imageView]];
             break;
         case 2:
-            [self handleDoubleTap:[touch locationInView:_imageView]];
-            break;
-        default:
+            [NSObject cancelPreviousPerformRequestsWithTarget:self];
             break;
     }
 }
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch* touch = [touches anyObject];
+    NSUInteger tapCount = touch.tapCount;
+    switch (tapCount) {
+        case 2:
+            [self handleDoubleTap:[touch locationInView:_imageView]];
+            break;
+    }
+}
+-(void)sendSingleTapNotification:(MyPhotoPageView*)pathotPageView
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:notficationPhotoPageViewSingleTap object:self];
+}
 -(void)handleSingleTap:(CGPoint)touchPoint
 {
-    
+    [self performSelector:@selector(sendSingleTapNotification:) withObject:self afterDelay:0.5];
 }
 -(void)handleDoubleTap:(CGPoint)touchPoint
 {

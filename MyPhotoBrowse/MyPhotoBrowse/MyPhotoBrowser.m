@@ -19,8 +19,6 @@
     UIScrollView*   _scrollView;
     
     NSInteger   _pageIndex;
-    NSInteger   _currentGroup;
-    NSInteger   _currentGrouOfIndex;
     
     NSMutableSet*   _visiblePages;
     NSMutableSet*   _recycledPages;
@@ -31,7 +29,7 @@
 @end
 
 @implementation MyPhotoBrowser
-
+@synthesize delegate = _delegate;
 @synthesize dataSource = _dataSource;
 
 - (id)initWithFrame:(CGRect)frame
@@ -56,8 +54,15 @@
         _reloadDataIfNeeded = YES;
         
         self.backgroundColor = [UIColor blackColor];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationSingleTap:) name:notficationPhotoPageViewSingleTap object:nil];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:notficationPhotoPageViewSingleTap];
 }
 
 -(void)setBackgroundColor:(UIColor *)backgroundColor
@@ -65,10 +70,7 @@
     [super setBackgroundColor:backgroundColor];
     _scrollView.backgroundColor = backgroundColor;
 }
--(void)setDelegate:(id<MyPhotoBrowserDelegate>)delegate
-{
-    _scrollView.delegate = delegate;
-}
+
 -(id<MyPhotoBrowserDelegate>)delegate
 {
     return (id<MyPhotoBrowserDelegate>)_scrollView.delegate;
@@ -81,7 +83,6 @@
         _reloadDataIfNeeded = NO;
     }
 }
-
 
 
 -(void)moveToPageAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated
@@ -109,6 +110,9 @@
         [page setMaxMinZoomScalesForCurrentBounds];
     }
     
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(photoBrowser:didDisplayPhotoAtIndexPath:)]) {
+        [_delegate photoBrowser:self didDisplayPhotoAtIndexPath:indexPath];
+    }    
 }
 -(void)reloadData
 {
@@ -222,6 +226,14 @@
 {
     return _reloadDataIfNeeded;
 }
+-(void)notificationSingleTap:(NSNotification*)notification
+{
+    NSIndexPath* indexPath = [self indexToIndexPath:_pageIndex];
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(photoBrowser:singleTapAtIndexpath:)]) {
+        [_delegate photoBrowser:self singleTapAtIndexpath:indexPath];
+    }
+    
+}
 #pragma mark - UIScrollView Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -245,7 +257,8 @@
     if (index >= _numberOfPages || index < 0) {
         return;
     }
-    [self moveToPageAtIndexPath:[self indexToIndexPath:index] animated:NO];
+    NSIndexPath* indexPath = [self indexToIndexPath:index];
+    [self moveToPageAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - Frame Calculations

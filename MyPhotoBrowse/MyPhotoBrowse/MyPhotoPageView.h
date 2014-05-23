@@ -15,3 +15,5 @@
 
 - (void)setMaxMinZoomScalesForCurrentBounds;
 @end
+
+UIKIT_EXTERN  NSString* const notficationPhotoPageViewSingleTap;

@@ -10,7 +10,7 @@
 #import "MyPhotoBrowser.h"
 #import "MyPhotoPageView.h"
 
-@interface MyViewController ()<MyPhotoBrowserDataSource>
+@interface MyViewController ()<MyPhotoBrowserDataSource, MyPhotoBrowserDelegate>
 {
     NSMutableArray* _dataSource;
 }
@@ -25,6 +25,7 @@
     MyPhotoBrowser*    tableView = [[MyPhotoBrowser alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:tableView];
     tableView.dataSource = self;
+    tableView.delegate = self;
     
     _dataSource = [[NSMutableArray alloc] init];
     UIImageView* imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo1.jpg"]];
@@ -68,6 +69,10 @@
 {
     return _dataSource.count;
 }
-
+-(void)photoBrowser:(MyPhotoBrowser*)photoBrowser didDisplayPhotoAtIndexPath:(NSIndexPath*)indexPath
+{
+    NSArray* array = [_dataSource objectAtIndex:indexPath.section];
+    self.title = [NSString stringWithFormat:@"%d of %d", indexPath.row + 1, array.count];
+}
 
 @end
