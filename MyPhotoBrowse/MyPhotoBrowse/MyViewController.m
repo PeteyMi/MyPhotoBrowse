@@ -13,6 +13,7 @@
 @interface MyViewController ()<MyPhotoBrowserDataSource, MyPhotoBrowserDelegate>
 {
     NSMutableArray* _dataSource;
+    MyPhotoBrowser*    tableView;
 }
 @end
 
@@ -22,7 +23,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    MyPhotoBrowser*    tableView = [[MyPhotoBrowser alloc] initWithFrame:self.view.bounds];
+    tableView = [[MyPhotoBrowser alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:tableView];
     tableView.dataSource = self;
     tableView.delegate = self;
@@ -37,7 +38,15 @@
     UIImageView* imageView7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo7.jpg"]];
     UIImageView* imageView8 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo8.jpg"]];
     
-    [_dataSource addObjectsFromArray:@[@[imageView1,imageView2],@[imageView3,imageView4,imageView5],@[imageView6],@[imageView7,imageView8]]];
+    NSMutableArray* array1 = [NSMutableArray arrayWithArray:@[imageView1,imageView2]];
+    NSMutableArray* array2 = [NSMutableArray arrayWithArray:@[imageView3,imageView4,imageView5]];
+    NSMutableArray* array3 = [NSMutableArray arrayWithArray:@[imageView6]];
+    NSMutableArray* array4 = [NSMutableArray arrayWithArray:@[imageView7,imageView8]];
+    
+    [_dataSource addObjectsFromArray:@[array1,array2,array3,array4]];
+    
+    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deletePhotoView:)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +82,17 @@
 {
     NSArray* array = [_dataSource objectAtIndex:indexPath.section];
     self.title = [NSString stringWithFormat:@"%d of %d", indexPath.row + 1, array.count];
+}
+
+-(void)deletePhotoView:(id)sender
+{
+    NSIndexPath* indexPath = [tableView currentPageIndexPath];
+    NSMutableArray* array = [_dataSource objectAtIndex:indexPath.section];
+    [array removeObjectAtIndex:indexPath.row];
+    if (array.count == 0) {
+        [_dataSource removeObject:array];
+    }
+    [tableView deletePageAtIndexPath:indexPath];
 }
 
 @end

@@ -116,6 +116,9 @@
 }
 -(void)reloadData
 {
+    for (MyPhotoPageView* item in _visiblePages) {
+        [item removeFromSuperview];
+    }
     [_visiblePages removeAllObjects];
     [_recycledPages removeAllObjects];
     
@@ -125,6 +128,7 @@
     
     _numberOfGroup = [[NSMutableArray alloc] init];
     _numberOfPages = 0;
+    _pageIndex = 0;
     NSInteger groupCount = 1;
     
     if (_dataSource != nil) {
@@ -141,8 +145,26 @@
     //Upate current page index    
     _scrollView.contentSize = [self contentSizeForPagingeScrollView];
     
-    [self moveToPageAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO];
+    if (_numberOfPages > 0) {
+        [self moveToPageAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO];
+    }    
 }
+- (void)deletePageAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self reloadData];
+    
+    NSInteger index = [self indexPathToIndex:indexPath];
+    if (index >= _numberOfPages) {
+        index = _numberOfPages - 1;
+    }
+    NSIndexPath* tmpIndexPath = [self indexToIndexPath:index];
+    if (tmpIndexPath != nil) {
+        [self moveToPageAtIndexPath:tmpIndexPath animated:NO];
+    } else {
+        
+    }
+}
+
 -(MyPhotoPageView*)dequeueReusablePages
 {
     MyPhotoPageView* page = [_recycledPages anyObject];
@@ -210,8 +232,9 @@
     }
 }
 -(void)layoutScrooViewSubView{
-    NSInteger index = [self currentPageIndex];
+    NSIndexPath* indexPath = [self currentPageIndexPath];
     
+    NSInteger index = [self indexPathToIndex:indexPath];
     [self enqueuePageViewAtIndex:index];
     
     for (NSInteger page = index - 1; page < index + 2; page++) {
@@ -304,9 +327,9 @@
     return floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 }
 
--(NSInteger)currentPageIndex
+-(NSIndexPath*)currentPageIndexPath
 {
-    return _pageIndex;
+    return [self indexToIndexPath:_pageIndex];
 }
 -(CGRect)frameForPageAtIndex:(NSUInteger)index{
     CGRect bounds = _scrollView.bounds;

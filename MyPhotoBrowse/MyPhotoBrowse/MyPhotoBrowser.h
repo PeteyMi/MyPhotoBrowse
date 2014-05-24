@@ -14,9 +14,9 @@
 
 @protocol MyPhotoBrowserDelegate<NSObject, UIScrollViewDelegate>
 
+@optional
 -(void)photoBrowser:(MyPhotoBrowser*)photoBrowser didDisplayPhotoAtIndexPath:(NSIndexPath*)indexPath;
 -(void)photoBrowser:(MyPhotoBrowser *)photoBrowser singleTapAtIndexpath:(NSIndexPath*)indexPath;
-
 @end
 
 
@@ -26,10 +26,12 @@
 @property(nonatomic, assign) id<MyPhotoBrowserDataSource> dataSource;
 @property(nonatomic, assign) id<MyPhotoBrowserDelegate> delegate;
 
--(NSInteger)currentPageIndex;
+-(NSIndexPath*)currentPageIndexPath;
 -(void)reloadData;
 -(MyPhotoPageView*)dequeueReusablePages;
 -(void)moveToPageAtIndexPath:(NSIndexPath*)indexPath animated:(BOOL)animated;
+- (void)deletePageAtIndexPath:(NSIndexPath *)indexPath;// withRowAnimation:(UITableViewRowAnimation)animation;
+ 
 @end
 
 
