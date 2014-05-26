@@ -116,6 +116,7 @@
 }
 -(void)reloadData
 {
+    _reloadDataIfNeeded = NO;
     for (MyPhotoPageView* item in _visiblePages) {
         [item removeFromSuperview];
     }
