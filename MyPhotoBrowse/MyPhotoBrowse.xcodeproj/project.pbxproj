@@ -31,6 +31,8 @@
 		40E9BA7D192F9B7A00DDF1DD /* photo6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA75192F9B7A00DDF1DD /* photo6.jpg */; };
 		40E9BA7E192F9B7A00DDF1DD /* photo7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA76192F9B7A00DDF1DD /* photo7.jpg */; };
 		40E9BA7F192F9B7A00DDF1DD /* photo8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40E9BA77192F9B7A00DDF1DD /* photo8.jpg */; };
+		5A393CBB1B705FF10077B1A7 /* MyShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A393CBA1B705FF10077B1A7 /* MyShowViewController.m */; };
+		5A393CBE1B7083880077B1A7 /* MyShow2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A393CBD1B7083880077B1A7 /* MyShow2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,10 @@
 		40E9BA75192F9B7A00DDF1DD /* photo6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo6.jpg; sourceTree = "<group>"; };
 		40E9BA76192F9B7A00DDF1DD /* photo7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo7.jpg; sourceTree = "<group>"; };
 		40E9BA77192F9B7A00DDF1DD /* photo8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo8.jpg; sourceTree = "<group>"; };
+		5A393CB91B705FF10077B1A7 /* MyShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShowViewController.h; sourceTree = "<group>"; };
+		5A393CBA1B705FF10077B1A7 /* MyShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShowViewController.m; sourceTree = "<group>"; };
+		5A393CBC1B7083880077B1A7 /* MyShow2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShow2ViewController.h; sourceTree = "<group>"; };
+		5A393CBD1B7083880077B1A7 /* MyShow2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShow2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,10 @@
 				40E9BA4B192F9A6B00DDF1DD /* MyViewController.m */,
 				40E9BA4D192F9A6B00DDF1DD /* Images.xcassets */,
 				40E9BA3C192F9A6B00DDF1DD /* Supporting Files */,
+				5A393CB91B705FF10077B1A7 /* MyShowViewController.h */,
+				5A393CBA1B705FF10077B1A7 /* MyShowViewController.m */,
+				5A393CBC1B7083880077B1A7 /* MyShow2ViewController.h */,
+				5A393CBD1B7083880077B1A7 /* MyShow2ViewController.m */,
 			);
 			path = MyPhotoBrowse;
 			sourceTree = "<group>";
@@ -293,10 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				40E9BA6F192F9B4900DDF1DD /* MyPhotoPageVIew.m in Sources */,
+				5A393CBE1B7083880077B1A7 /* MyShow2ViewController.m in Sources */,
 				40E9BA4C192F9A6B00DDF1DD /* MyViewController.m in Sources */,
 				40E9BA46192F9A6B00DDF1DD /* MyAppDelegate.m in Sources */,
 				40E9BA42192F9A6B00DDF1DD /* main.m in Sources */,
 				40E9BA6E192F9B4900DDF1DD /* MyPhotoBrowser.m in Sources */,
+				5A393CBB1B705FF10077B1A7 /* MyShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
